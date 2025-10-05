@@ -14,7 +14,7 @@
 ### Customized
 1. [Project Guidelines / Checklist](#project-guidelines--checklist)
 1. [SharedTableComponent](#sharedtablecomponent)
-2. [TypeBadgeDirective](#typebadgedirective)
+2. [TypeBadgeDirective](#typebadgedirective) (Used in the table)
 3. [StatisticsCardComponent](#statisticscardcomponent)
 4. [CustomPrimeNgBreadcrumb](#customprimengbreadcrumb)
 ### Checklist
