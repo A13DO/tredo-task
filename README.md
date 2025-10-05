@@ -43,19 +43,6 @@
 ### Description
 `SharedTableComponent` is a reusable Angular component built with **PrimeNG** and **TailwindCSS** for displaying data in a table format. Supports **sorting, filtering, exporting, and copy-to-clipboard** features while following design standards.
 
-### Features
-- Responsive table layout (`p-table`) with scrolling.
-- Multi-column sorting (`p-sortIcon`) for all columns except actions.
-- Selectable rows with checkboxes (`p-tableHeaderCheckbox` & `p-tableCheckbox`).
-- Copy-to-clipboard functionality for `code` and `AWB`.
-- Custom badges for `type` field via `TypeBadgeDirective`.
-- Search input with Tailwind styling.
-- Filters popover:
-  - Date & Time pickers (`p-datepicker`) for range filtering.
-  - Apply button to trigger filters.
-- TailwindCSS-based spacing, colors, and typography.
-- All PrimeNG modifications are local to the component.
-
 ### Inputs
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
@@ -63,10 +50,42 @@
 | `data` | `any[]` | `[]` | Array of table row data. |
 | `table_title` | `string` | `''` | Title displayed above the table. |
 
-### ViewChild
-| Name | Type | Description |
-|------|------|-------------|
-| `filterPopover` | `Popover` | Reference to the filters popover. |
+### How it Works
+
+1. **Dynamic Columns**  
+   - Pass an array of columns via the `columns` input:  
+     ```ts
+     columns = [
+       { field: 'code', header: 'Code' },
+       { field: 'AWB', header: 'AWB' },
+       { field: 'fromDay', header: 'From Date' },
+       { field: 'toDay', header: 'To Date' },
+       { field: 'type', header: 'Type' },
+       { field: 'COD', header: 'COD' },
+       { field: 'shippingFees', header: 'Shipping Fees' },
+       { field: 'actions', header: 'Actions' }
+     ];
+     ```
+   - Each column is rendered with `<th>` in the table header. Columns can be sortable unless they are `actions`.
+
+2. **Row Rendering and `@switch`**  
+   - The table body iterates over `data` rows.  
+   - `@switch(col.field)` is used to **render specific columns differently**:
+     - `code` and `AWB`: clickable to **copy to clipboard**. Icon changes to a check mark when copied.
+     - `fromDay`, `toDay`, `pickupTime`: formatted as **date and time**.
+     - `type`: rendered with **`TypeBadgeDirective`** for colored badges.
+     - `COD` and `shippingFees`: show values with currency.
+     - `actions`: render buttons for **PDF and Excel export**.
+
+3. **Selection**  
+   - Header checkbox: `<p-tableHeaderCheckbox>`  
+   - Row checkbox: `<p-tableCheckbox [value]="row">`  
+   - Allows selecting multiple rows.
+
+4. **Filtering**  
+   - A popover (`p-popover`) contains **date and time pickers** (`p-datepicker`) for filtering rows.  
+   - The "Apply" button triggers the filter logic via the `toggle()` method.
+
 
 
 ## TypeBadgeDirective
