@@ -155,7 +155,8 @@ A reusable breadcrumb component built with **PrimeNG** for displaying navigation
 ```
 - [x] **Basic Inputs (PrimeNG)**:  
   - Date/Time → `p-datepicker`  
-  - Select/Dropdown → `p-dropdown` 
+  - Select/Dropdown → used `p-popover`
+  - Toast Messages → `p-toast` notifications displayed
 - [x] **Fonts**: Follow design-specified types, sizes, and weights.
 
 
