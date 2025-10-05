@@ -137,11 +137,9 @@ export class FinancialComponent {
 
   ngOnInit() {
     this.items = [
-      { label: 'Dashboard', icon: 'pi pi-home' },
-      { label: 'Financial', icon: 'pi pi-wallet', current: true },
+      { label: 'Dashboard', icon: 'dashboard_icon' },
+      { label: 'Financial', icon: 'financial_icon', current: true },
     ];
-
-    this.home = { icon: 'pi pi-home', routerLink: '/' };
   }
   btn_loading = false;
 

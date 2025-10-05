@@ -31,6 +31,7 @@ export default {
         '2xl': '24px',
         '2_8xl': '28px',
         '3xl': '32px',
+        '4xl': '48px',
       },
       fontSize: {
         sm: ['14px', { fontWeight: '400' }],

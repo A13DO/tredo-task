@@ -13,3 +13,7 @@
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
+a:hover img {
+  filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(0%)
+    hue-rotate(203deg) brightness(111%) contrast(101%);
+}

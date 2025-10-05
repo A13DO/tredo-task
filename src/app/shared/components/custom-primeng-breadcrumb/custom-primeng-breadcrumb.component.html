@@ -3,7 +3,8 @@
   <ng-template #item let-item>
     <a class="flex items-center gap-sm cursor-pointer text-md text-secondary hover:text-main"
       [class.text-strong_color]="item.current">
-      <i [class]="item.icon"></i>
+      <img src="assets/{{item.icon}}.svg" width="18" alt="Icon">
+
       <p> {{ item.label }}</p>
     </a>
   </ng-template>
