@@ -34,7 +34,7 @@
 ### How it Works
 
 1. **Dynamic Columns**  
-   - Pass an array of columns via the `columns` input:  
+   - Provide `columns` for headers and `items` for row data, where each item's keys match the corresponding column `field`.
      ```ts
      columns = [
        { field: 'code', header: 'Code' },
@@ -46,6 +46,18 @@
        { field: 'shippingFees', header: 'Shipping Fees' },
        { field: 'actions', header: 'Actions' }
      ];
+
+     items = [
+       { 
+         code: 'ORD001', AWB: 'AWB12345',
+         fromDay: new Date(), 
+         toDay: new Date(), 
+         pickupTime: new Date(),
+         type: 'delivery', 
+         ...
+       }
+      ...
+     ]
      ```
    - Each column is rendered with `<th>` in the table header. Columns can be sortable unless they are `actions`.
 
