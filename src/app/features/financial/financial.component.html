@@ -3,10 +3,8 @@
     <app-custom-primeng-breadcrumb [items]="items"></app-custom-primeng-breadcrumb>
     <div class="flex items-center justify-between">
       <h1 class="text-page_title text-strong_color">Financial</h1>
-      <button
-        class="flex items-center justify-center gap-sm bg-main text-md px-xl py-2lg text-light-base rounded-md hover:opacity-90   cursor-pointer">
-        <i class="pi pi-file-export"></i>
-        <span>Export Reports</span>
+      <button pButton label="Export Reports" class="text-md" icon="pi pi-file-export" [loading]="btn_loading"
+        (click)="onClick()">
       </button>
     </div>
   </section>

@@ -1,16 +1,23 @@
 import { Component } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { MenuItem, MessageService } from 'primeng/api';
 import { CustomPrimengBreadcrumbComponent } from '../../shared/components/custom-primeng-breadcrumb/custom-primeng-breadcrumb.component';
 import { SharedTableComponent } from '../../shared/components/shared-table/shared-table.component';
-import { StatisticsCardComponent } from "../../shared/components/statistics-card/statistics-card.component";
+import { StatisticsCardComponent } from '../../shared/components/statistics-card/statistics-card.component';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-financial',
-  imports: [CustomPrimengBreadcrumbComponent, SharedTableComponent, StatisticsCardComponent],
+  imports: [
+    CustomPrimengBreadcrumbComponent,
+    SharedTableComponent,
+    StatisticsCardComponent,
+    ButtonModule,
+  ],
   templateUrl: './financial.component.html',
   styleUrl: './financial.component.css',
 })
 export class FinancialComponent {
+  constructor(private messageService: MessageService) {}
   items: { icon: string; label: string; current?: boolean }[] | undefined;
 
   home: { icon: string; routerLink: string } | undefined;
@@ -135,5 +142,20 @@ export class FinancialComponent {
     ];
 
     this.home = { icon: 'pi pi-home', routerLink: '/' };
+  }
+  btn_loading = false;
+
+  onClick() {
+    this.btn_loading = true;
+
+    // Simulate a 2-second operation
+    setTimeout(() => {
+      this.btn_loading = false;
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Success',
+        detail: 'All Reportes Exported Successfully',
+      });
+    }, 2000);
   }
 }

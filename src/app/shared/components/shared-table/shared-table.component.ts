@@ -5,7 +5,8 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
 import { TypeBadgeDirective } from '../../Directives/type-badge.directive';
 import { Popover, PopoverModule } from 'primeng/popover';
-import { DatePickerModule } from "primeng/datepicker";
+import { DatePickerModule } from 'primeng/datepicker';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-shared-table',
@@ -16,12 +17,14 @@ import { DatePickerModule } from "primeng/datepicker";
     ButtonModule,
     TypeBadgeDirective,
     PopoverModule,
-    DatePickerModule
-],
+    DatePickerModule,
+  ],
   templateUrl: './shared-table.component.html',
   styleUrl: './shared-table.component.css',
 })
 export class SharedTableComponent {
+  constructor(private messageService: MessageService) {}
+
   @Input() columns: { field: string; header: string }[] = [];
   @Input() data: any[] = [];
   @Input() table_title: string = '';
@@ -38,5 +41,55 @@ export class SharedTableComponent {
   }
   toggle(event: Event) {
     this.filterPopover.toggle(event);
+  }
+  all_PDF_btn_loading: boolean = false;
+  all_Excel_btn_loading: boolean = false;
+  PDF_btn_loading: boolean = false;
+  Excel_btn_loading: boolean = false;
+
+  onAllDownloadPDF() {
+    this.all_PDF_btn_loading = true;
+    setTimeout(() => {
+      this.all_PDF_btn_loading = false;
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Success',
+        detail: 'All Data Exported as PDF Successfully',
+      });
+    }, 2000);
+  }
+  onAllDownloadExcel() {
+    this.all_Excel_btn_loading = true;
+    setTimeout(() => {
+      this.all_Excel_btn_loading = false;
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Success',
+        detail: 'All Data Exported as Excel Successfully',
+      });
+    }, 2000);
+  }
+  onDownloadPDF(row: any) {
+    row.PDF_btn_loading = true; // per row loading
+    setTimeout(() => {
+      row.PDF_btn_loading = false;
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Success',
+        detail: `Row ${row.code} exported as PDF successfully`,
+      });
+    }, 2000);
+  }
+
+  onDownloadExcel(row: any) {
+    row.Excel_btn_loading = true; // per row loading
+    setTimeout(() => {
+      row.Excel_btn_loading = false;
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Success',
+        detail: `Row ${row.code} exported as Excel successfully`,
+      });
+    }, 2000);
   }
 }

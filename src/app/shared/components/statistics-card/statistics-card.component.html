@@ -8,15 +8,15 @@
       {{ amount }}
     </div>
 
-    <div class="flex items-center gap-1 text-sm">
-      <div *ngIf="percentage">
-        <i class="pi" [ngClass]="{
-          'pi-arrow-up-right text-green-600': trend === 'up',
-          'pi-arrow-down-right text-red-500': trend === 'down'
-        }"></i>
+    <div class="flex items-center gap-sm text-sm">
+      <div *ngIf="percentage" class="flex flex-row items-center gap-sm">
+        <div>
+          <img *ngIf="trend === 'up'" src="assets/trend_up_icon.svg" alt="">
+        </div>
+        <i *ngIf="trend === 'down'" class="pi pi-arrow-down-right text-red-500"></i>
         <span class="opacity-70" [ngClass]="{
-          'text-green text-sm': trend === 'up',
-          'text-red text-sm': trend === 'down'
+          'text-green-500 text-sm': trend === 'up',
+          'text-red-500 text-sm': trend === 'down'
         }">
           {{ percentage }}
         </span>

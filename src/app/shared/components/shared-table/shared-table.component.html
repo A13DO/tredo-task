@@ -7,22 +7,18 @@
         <i class="pi pi-chevron-down"></i>
         <span>Show Filters</span>
       </button>
-      <button
-        class="flex items-center justify-center gap-sm bg-light-base border border-lines_color text-md px-xl py-md text-main rounded-md hover:bg-light-muted  cursor-pointer">
-        <i class="pi pi-file-pdf"></i>
-        <span>Download PDF</span>
+      <button pButton label="Download PDF" class="text-md" icon="pi pi-file-pdf" [loading]="all_PDF_btn_loading"
+        (click)="onAllDownloadPDF()">
       </button>
-      <button type="button" (click)="dt.exportCSV()"
-        class="flex items-center justify-center gap-sm bg-light-base border border-lines_color text-md px-xl py-md text-main rounded-md hover:bg-light-muted  cursor-pointer">
-        <i class="pi pi-file"></i>
-        <span>Download Excel</span>
+      <button pButton label="Download Excel" class="text-md" icon="pi pi-file" [loading]="all_Excel_btn_loading"
+        (click)="onAllDownloadExcel()">
       </button>
     </div>
     <div>
       <div class="relative w-search-w">
         <i class="pi pi-search absolute left-lg top-1/2 -translate-y-1/2 text-secondary"></i>
         <input type="text" placeholder="Search orders"
-          class="w-full h-icon-box pl-10 pr-lg py-sm text-sm border border-lines_color rounded-md focus:outline-none focus:ring-2 focus:main focus:border-transparent" />
+          class="w-full h-icon-box pl-10 pr-lg py-sm text-sm border border-lines_color  transition-all duration-300 rounded-md focus:outline-none focus:ring-2 focus:main focus:border-transparent" />
       </div>
     </div>
   </div>
@@ -103,15 +99,18 @@
 
             @case('actions') {
             <div class="flex flex-row items-center gap-lg">
-              <button
-                class="flex items-center justify-center gap-sm bg-light-base border border-lines_color text-sm px-xl py-md text-main font-medium rounded-md hover:bg-light-muted  cursor-pointer">
-                <i class="pi pi-download"></i>
-                <span>PDF</span>
+              <!-- PDF Button -->
+              <button pButton type="button" label="PDF" class="text-md" icon="pi pi-download"
+                [loading]="row.PDF_btn_loading"
+                class="flex items-center justify-center gap-sm bg-light-base border border-lines_color text-sm px-xl py-md text-main font-medium rounded-md hover:bg-light-muted cursor-pointer"
+                (click)="onDownloadPDF(row)">
               </button>
-              <button (click)="dt.exportCSV({ selectionOnly: true })"
-                class="flex items-center justify-center gap-sm bg-light-base border border-lines_color text-sm px-xl py-md text-main font-medium rounded-md hover:bg-light-muted  cursor-pointer">
-                <i class="pi pi-download"></i>
-                <span>Excel</span>
+
+              <!-- Excel Button -->
+              <button pButton type="button" label="Excel" class="text-md" icon="pi pi-download"
+                [loading]="row.Excel_btn_loading"
+                class="flex items-center justify-center gap-sm bg-light-base border border-lines_color text-sm px-xl py-md text-main font-medium rounded-md hover:bg-light-muted cursor-pointer"
+                (click)="onDownloadExcel(row)">
               </button>
             </div>
             }

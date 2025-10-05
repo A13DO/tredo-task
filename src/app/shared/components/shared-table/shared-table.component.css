@@ -1,11 +1,26 @@
 :host {
+  /* PrimeNG Table */
   --p-datatable-header-cell-background: #f4f4f4;
   --p-datatable-header-cell-padding: 15.5px 16px;
   --p-datatable-body-cell-padding: 15.5px 16px;
   --p-datatable-body-cell-padding: 1.063rem 16px;
+  /* PrimeNG Button */
+  --p-button-primary-background: #ffffff;
+  --p-button-primary-color: #092d47;
+  --p-button-primary-hover-color: #092d47;
+  --p-button-primary-hover-background: #f8f9fa;
+  --p-button-primary-border-color: #e6e6e6;
+  --p-button-primary-hover-border-color: #e6e6e6;
+  --p-button-padding-y: 8.5px;
+  --p-button-padding-x: 16px;
+  --p-button-primary-active-border-color: none;
+  --p-button-primary-active-background: #092d47;
 }
 ::ng-deep .custom_table .p-datatable-table {
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid #e6e6e6;
+}
+.p-button {
+  font-size: 14px;
 }

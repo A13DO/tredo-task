@@ -1,0 +1,13 @@
+:host {
+  --p-button-primary-background: #092d47;
+  --p-button-primary-hover-background: #214259;
+  --p-button-primary-border-color: none;
+  --p-button-primary-hover-border-color: none;
+  --p-button-padding-y: 12px;
+  --p-button-padding-x: 16px;
+  --p-button-primary-active-border-color: none;
+  --p-button-primary-active-background: #092d47;
+}
+.p-button {
+  font-size: 14px;
+}

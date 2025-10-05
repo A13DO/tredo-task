@@ -1,8 +1,9 @@
-<header class="h-header-h flex flex-wrap items-center px-3xl justify-between bg-light-base transition-all duration-300">
-  <div class="relative w-search-w">
+<header
+  class="min-h-header-h flex flex-wrap items-center px-3xl justify-between bg-light-base transition-all duration-300 border-b-1  border-b-lines_color">
+  <div class="relative w-search-w ">
     <i class="pi pi-search absolute left-md top-1/2 -translate-y-1/2 text-secondary"></i>
     <input type="text" placeholder="Search..."
-      class="w-full h-input-h pl-10 pr-md py-sm text-sm border border-lines_color rounded-md focus:outline-none focus:ring-2 focus:ring-main focus:border-transparent" />
+      class="w-full h-input-h pl-10 pr-md py-sm text-sm border border-lines_color  transition-all duration-300 rounded-md focus:outline-none focus:ring-2 focus:ring-main focus:border-transparent" />
   </div>
 
   <!-- Right section -->
@@ -11,13 +12,8 @@
       <i class="pi pi-wallet"></i>
       <span>$1199.00</span>
     </div>
-
-    <button
-      class="flex items-center justify-center gap-sm bg-main text-md px-xl py-md text-light-base rounded-md cursor-pointer hover:opacity-90 transition">
-      <i class="pi pi-plus"></i>
-      <span>Create Order</span>
+    <button pButton class="text-md" label="Create Order" icon="pi pi-plus" [loading]="btn_loading" (click)="onClick()">
     </button>
-
     <div
       class="flex items-center justify-center bg-light-muted rounded-md w-icon-box h-icon-box cursor-pointer hover:opacity-90 transition">
       <img width="24" src="assets/notificaion_icon.svg" alt="Notifications">
