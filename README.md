@@ -83,6 +83,20 @@ Displays a small colored badge with a label based on the input `type`.
  
 ## StatisticsCardComponent
 ## CustomPrimeNgBreadcrumb
+
+## CustomPrimeNgBreadcrumb
+A reusable breadcrumb component built with **PrimeNG** for displaying navigation paths.
+
+### Inputs
+| Name | Type | Description |
+|------|------|-------------|
+| `items` | `{ label: string; icon: string; current?: boolean }[]` | Array of breadcrumb items. The `current` property highlights the active item. |
+
+### Usage
+```html
+<app-custom-primeng-breadcrumb [items]="items"></app-custom-primeng-breadcrumb>
+```
+
 ---
 
 ## Project Guidelines / Checklist
