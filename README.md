@@ -85,11 +85,6 @@ Displays a small colored badge with a label based on the input `type`.
 
 ### Description
 A reusable card component, shows a summary with:  
-- Title  
-- Amount/value  
-- Optional percentage change with trend (up/down)  
-- Description  
-- Icon with background color 
 
 ### Usage
 ```html
