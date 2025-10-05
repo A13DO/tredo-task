@@ -15,8 +15,8 @@
 1. [Project Guidelines / Checklist](#project-guidelines--checklist)
 1. [SharedTableComponent](#sharedtablecomponent)
 2. [TypeBadgeDirective](#typebadgedirective) (Used in the table)
-3. [StatisticsCardComponent](#statisticscardcomponent)
-4. [CustomPrimeNgBreadcrumb](#customprimengbreadcrumb)
+3. [StatisticsCardComponent](#statisticscardcomponent) (Used in financial page)
+4. [CustomPrimeNgBreadcrumb](#customprimengbreadcrumb) (Used in financial page)
 ### Checklist
 5. [Project Guidelines / Checklist](#project-guidelines--checklist)
 
