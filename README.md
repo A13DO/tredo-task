@@ -65,7 +65,7 @@
 2. **Row Rendering and `@switch`**  
    - The table body iterates over `data` rows.  
    - `@switch(col.field)` is used to **render specific columns differently**:
-     - `code` and `AWB`: clickable to **copy to clipboard**. Icon changes to a check mark when copied.
+     - `code` and `AWB`: clickable to **copy to clipboard**.
      - `fromDay`, `toDay`, `pickupTime`: formatted as **date and time**.
      - `type`: rendered with [TypeBadgeDirective](#typebadgedirective) for colored badges.
      - `COD` and `shippingFees`: show values with currency.
