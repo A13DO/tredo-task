@@ -80,9 +80,8 @@ Displays a small colored badge with a label based on the input `type`.
 ```html
 <div [appTypeBadge]="order.type"></div>
  ```
+ 
 ## StatisticsCardComponent
-
-
 
 ### Description
 A reusable card component, shows a summary with:  
@@ -90,18 +89,7 @@ A reusable card component, shows a summary with:
 - Amount/value  
 - Optional percentage change with trend (up/down)  
 - Description  
-- Icon with background color  
-
-Ideal for dashboards or summary sections.
-
-### Inputs
-- `title` (string) – Card title
-- `amount` (string) – Main value displayed
-- `percentage` (string, optional) – Percentage change
-- `trend` ('up' | 'down' | null) – Trend indicator
-- `description` (string, optional) – Additional text
-- `icon` (string) – Icon filename in `assets/cards/`
-- `color` (string) – Background color for the icon container (default `#3F51B5`)
+- Icon with background color 
 
 ### Usage
 ```html
