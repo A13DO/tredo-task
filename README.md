@@ -10,13 +10,15 @@
 ---
 
 ## Table of Contents
-1. [Project Guidelines / Checklist](#project-guidelines--checklist)
-### Customized
-3. [SharedTableComponent](#sharedtablecomponent)
-4. [TypeBadgeDirective](#typebadgedirective)
-5. [StatisticsCardComponent](#typebadgedirective)
-5. [CustomPrimeNgBreadcrumb](#typebadgedirective)
 
+### Customized
+1. [Project Guidelines / Checklist](#project-guidelines--checklist)
+1. [SharedTableComponent](#sharedtablecomponent)
+2. [TypeBadgeDirective](#typebadgedirective)
+3. [StatisticsCardComponent](#statisticscardcomponent)
+4. [CustomPrimeNgBreadcrumb](#customprimengbreadcrumb)
+### Checklist
+5. [Project Guidelines / Checklist](#project-guidelines--checklist)
 
 ---
 
