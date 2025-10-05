@@ -68,24 +68,17 @@
 |------|------|-------------|
 | `filterPopover` | `Popover` | Reference to the filters popover. |
 
-### Usage Example
-```html
-<app-shared-table
-  [columns]="columns"
-  [data]="orders"
-  table_title="Orders Table">
-</app-shared-table>
-
 
 ## TypeBadgeDirective
 
 ### Description
-`TypeBadgeDirective` displays a colored badge with a label based on the input `type`. It supports values like `delivery`, `return`, `pickup`, or any other value. The directive uses `Renderer2` to render a small colored circle next to the label and applies all styles locally.
+Displays a small colored badge with a label based on the input `type`.  
+Supports `delivery`, `return`, `pickup`, or any other value. Styles are applied locally using `Renderer2`.
 
 ### Input
 | Name | Type | Description |
 |------|------|-------------|
-| `appTypeBadge` | `string` | The type of badge to display (`delivery`, `return`, `pickup`, or other). |
+| `appTypeBadge` | `string` | Type of badge (`delivery`, `return`, `pickup`, or other). |
 
 ### Usage
 ```html
