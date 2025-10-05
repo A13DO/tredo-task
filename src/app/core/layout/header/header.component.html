@@ -28,13 +28,33 @@
       <img width="24" src="assets/UK_flag_icon.svg" alt="Language">
     </div>
 
-    <div class="flex flex-row items-center gap-md p-sm cursor-pointer hover:bg-light-muted rounded-md">
+    <div (click)="userMenu.toggle($event, userMenuTrigger)"
+      class="flex flex-row items-center gap-md p-sm cursor-pointer hover:bg-light-muted rounded-md">
       <img width="40" src="assets/user_icon.svg" alt="User">
-      <div class="flex flex-col items-center leading-tight">
+
+      <div class="flex flex-col leading-tight">
         <span class="text-sm font-medium text-secondary">Abdo</span>
         <span class="text-xs text-secondary">Admin</span>
       </div>
       <i class="pi pi-chevron-down text-secondary_strong"></i>
+
     </div>
+    <div #userMenuTrigger class="ps-sm mt-3xl"></div>
+    <p-popover #userMenu [dismissable]="true" styleClass="custom_popover"
+      [style]="{width: '126px', overflow: 'hidden'}">
+      <div class="flex flex-col">
+        <button
+          class="flex items-center gap-sm py-sm px-2lg text-sm rounded-sm hover:bg-main hover:text-light-base cursor-pointer"
+          (click)="userMenu.hide()">
+          <i class="pi pi-user"></i> Profile
+        </button>
+        <button
+          class="flex items-center gap-sm py-sm px-2lg text-sm rounded-sm hover:bg-main hover:text-light-base cursor-pointer"
+          (click)="userMenu.hide()">
+          <i class="pi pi-sign-out"></i> Logout
+        </button>
+      </div>
+    </p-popover>
+
   </div>
 </header>

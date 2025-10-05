@@ -2,7 +2,7 @@
   <h1 class="text-page_title text-strong_color">{{ table_title }}</h1>
   <div class="flex flex-row items-center justify-between">
     <div class="flex flex-row items-center gap-xl">
-      <button
+      <button type="button" (click)="toggle($event)"
         class="flex items-center justify-center gap-sm bg-light-base border border-lines_color text-md px-xl py-md text-main rounded-md hover:bg-light-muted  cursor-pointer">
         <i class="pi pi-chevron-down"></i>
         <span>Show Filters</span>
@@ -126,3 +126,27 @@
   </div>
 
 </main>
+<p-popover #filterPopover>
+  <div class="flex flex-col gap-4">
+    <span class="text-lg text-main">Filters</span>
+
+    <!-- Date Filter -->
+    <div>
+      <span class="text-md text-secondary block">Date</span>
+      <p-datepicker placeholder="From Date" inputId="calendar-12h" [showTime]="true" [hourFormat]="'12'" />
+
+    </div>
+
+    <!-- Time Filter -->
+    <div>
+      <span class="text-md text-secondary block">Time</span>
+
+      <p-datepicker placeholder="To Date" inputId="calendar-24h" [showTime]="true" [hourFormat]="'24'" />
+    </div>
+
+    <!-- Apply Button -->
+    <div class="flex justify-end">
+      <button pButton type="button" label="Apply" (click)="toggle($event)"></button>
+    </div>
+  </div>
+</p-popover>
