@@ -12,7 +12,7 @@
 ## Table of Contents
 1. [Project Guidelines / Checklist](#project-guidelines--checklist)
 2. [SharedTableComponent](#sharedtablecomponent)
- --- [TypeBadgeDirective](#typebadgedirective)
+3. [TypeBadgeDirective](#typebadgedirective)
 
 ---
 
