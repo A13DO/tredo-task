@@ -95,15 +95,13 @@ A reusable card component, shows a summary with:
 Ideal for dashboards or summary sections.
 
 ### Inputs
-| Name | Type | Default | Description |
-|------|------|---------|-------------|
-| `title` | `string` | `!` | Card title |
-| `amount` | `string` | `!` | Main value displayed |
-| `percentage` | `string` | optional | Percentage change value |
-| `trend` | `'up' | 'down' | null` | `null` | Trend indicator: up or down |
-| `description` | `string` | optional | Small descriptive text |
-| `icon` | `string` | `!` | Icon filename in `assets/cards/` |
-| `color` | `string` | `'#3F51B5'` | Background color of the icon container |
+- `title` (string) – Card title
+- `amount` (string) – Main value displayed
+- `percentage` (string, optional) – Percentage change
+- `trend` ('up' | 'down' | null) – Trend indicator
+- `description` (string, optional) – Additional text
+- `icon` (string) – Icon filename in `assets/cards/`
+- `color` (string) – Background color for the icon container (default `#3F51B5`)
 
 ### Usage
 ```html
