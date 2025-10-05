@@ -12,15 +12,7 @@
 ## Table of Contents
 1. [Project Guidelines / Checklist](#project-guidelines--checklist)
 2. [SharedTableComponent](#sharedtablecomponent)
-   - [Description](#description)
-   - [Features](#features)
-   - [Inputs](#inputs)
-   - [ViewChild](#viewchild)
-   - [Usage Example](#usage-example)
-3. [TypeBadgeDirective](#typebagedirective)
-   - [Description](#description-1)
-   - [Input](#input)
-   - [Usage](#usage)
+ --- [TypeBadgeDirective](#typebadgedirective)
 
 ---
 
