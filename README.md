@@ -88,12 +88,11 @@
 
 ## TypeBadgeDirective
 Displays a small colored badge with a label based on the input `type`.  
-Supports `delivery`, `return`, `pickup`, or any other value. Styles are applied locally using `Renderer2`.
 
 ### Input
 | Name | Type | Description |
 |------|------|-------------|
-| `appTypeBadge` | `string` | Type of badge (`delivery`, `return`, `pickup`, or other). |
+| `appTypeBadge` | `string` | Type of badge (`delivery`, `return`, `pickup`). |
 
 ### Usage
 ```html
