@@ -85,12 +85,12 @@ Displays a small colored badge with a label based on the input `type`.
 
 - [x] **TailwindCSS Config**: All colors and spacing come from `tailwind.config.js`. No arbitrary values. 
 - [x] **PrimeNG Local Customization**: Style components locally according to design; no global overrides.
-     ```html
-        // using this method (example)
-        :host {
-          --p-breadcrumb-padding: 0;
-        }
-     ```
+```css
+  // using this method (example)
+  :host {
+     --p-breadcrumb-padding: 0;
+  }
+```
 - [x] **Basic Inputs (PrimeNG)**:  
   - Date/Time → `p-datepicker`  
   - Select/Dropdown → `p-dropdown` 
