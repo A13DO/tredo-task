@@ -129,9 +129,9 @@ A reusable breadcrumb component built with **PrimeNG** for displaying navigation
 
 ## Project Guidelines / Checklist
 
-- [x] **TailwindCSS Config**: All colors and spacing come from `tailwind.config.js`. No arbitrary values. 
+- [x] **TailwindCSS Config**: All colors and spacing come from `tailwind.config.js`. 
+  **Note:** All colors and spacing are based on repeatedly used values from the Figma design.
 ```ts
-  // All colors and spacing are based on repeatedly used values from the Figma design.
   // (example) 
   spacing: {
     sm: '8px',
