@@ -11,9 +11,11 @@
 
 ## Table of Contents
 1. [Project Guidelines / Checklist](#project-guidelines--checklist)
-2. [SharedTableComponent](#sharedtablecomponent)
-3. [TypeBadgeDirective](#typebadgedirective)
-
+### Customized
+3. [SharedTableComponent](#sharedtablecomponent)
+4. [TypeBadgeDirective](#typebadgedirective)
+5. [StatisticsCardComponent](#typebadgedirective)
+5. [CustomPrimeNgBreadcrumb](#typebadgedirective)
 ---
 
 ## Project Guidelines / Checklist
@@ -29,7 +31,6 @@
 - [x] **Icons**: Use PrimeNG icons wherever possible. ✅ true
 
 ---
-### Customized (SharedTable, TypeBadgeDirective, StatisticsCardComponent, CustomPrimeNgBreadcrumb)
 
 ## SharedTableComponent
 `SharedTableComponent` is a reusable table component. Supports **sorting, row select & more**.
