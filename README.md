@@ -73,7 +73,7 @@
    - `@switch(col.field)` is used to **render specific columns differently**:
      - `code` and `AWB`: clickable to **copy to clipboard**. Icon changes to a check mark when copied.
      - `fromDay`, `toDay`, `pickupTime`: formatted as **date and time**.
-     - `type`: rendered with **`TypeBadgeDirective`** for colored badges.
+     - `type`: rendered with [TypeBadgeDirective](#typebagedirective) for colored badges.
      - `COD` and `shippingFees`: show values with currency.
      - `actions`: render buttons for **PDF and Excel export**.
 
@@ -81,11 +81,6 @@
    - Header checkbox: `<p-tableHeaderCheckbox>`  
    - Row checkbox: `<p-tableCheckbox [value]="row">`  
    - Allows selecting multiple rows.
-
-4. **Filtering**  
-   - A popover (`p-popover`) contains **date and time pickers** (`p-datepicker`) for filtering rows.  
-   - The "Apply" button triggers the filter logic via the `toggle()` method.
-
 
 
 ## TypeBadgeDirective
