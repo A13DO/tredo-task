@@ -1,0 +1,31 @@
+<div class="bg-light-base flex justify-between  items-start rounded-2xl p-xl">
+  <div class="flex flex-col gap-sm">
+    <h2 class="text-lg text-strong_color">
+      {{ title }}
+    </h2>
+
+    <div class="text-2xl  text-main">
+      {{ amount }}
+    </div>
+
+    <div class="flex items-center gap-1 text-sm">
+      <div *ngIf="percentage">
+        <i class="pi" [ngClass]="{
+          'pi-arrow-up-right text-green-600': trend === 'up',
+          'pi-arrow-down-right text-red-500': trend === 'down'
+        }"></i>
+        <span class="opacity-70" [ngClass]="{
+          'text-green text-sm': trend === 'up',
+          'text-red text-sm': trend === 'down'
+        }">
+          {{ percentage }}
+        </span>
+      </div>
+      <span class="text-sm text-secondary opacity-70">{{ description }}</span>
+    </div>
+  </div>
+
+  <div class="p-lg rounded-2xl flex items-center justify-center w-13 h-13" [ngStyle]="{ 'background-color': color }">
+    <img src="assets/cards/{{ icon }}.svg" alt="">
+  </div>
+</div>

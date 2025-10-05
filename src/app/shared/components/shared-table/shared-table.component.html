@@ -1,0 +1,128 @@
+<main class="bg-light-base rounded-xl py-2xl px-3xl flex flex-col gap-xl">
+  <h1 class="text-page_title text-strong_color">{{ table_title }}</h1>
+  <div class="flex flex-row items-center justify-between">
+    <div class="flex flex-row items-center gap-xl">
+      <button
+        class="flex items-center justify-center gap-sm bg-light-base border border-lines_color text-md px-xl py-md text-main rounded-md hover:bg-light-muted  cursor-pointer">
+        <i class="pi pi-chevron-down"></i>
+        <span>Show Filters</span>
+      </button>
+      <button
+        class="flex items-center justify-center gap-sm bg-light-base border border-lines_color text-md px-xl py-md text-main rounded-md hover:bg-light-muted  cursor-pointer">
+        <i class="pi pi-file-pdf"></i>
+        <span>Download PDF</span>
+      </button>
+      <button type="button" (click)="dt.exportCSV()"
+        class="flex items-center justify-center gap-sm bg-light-base border border-lines_color text-md px-xl py-md text-main rounded-md hover:bg-light-muted  cursor-pointer">
+        <i class="pi pi-file"></i>
+        <span>Download Excel</span>
+      </button>
+    </div>
+    <div>
+      <div class="relative w-search-w">
+        <i class="pi pi-search absolute left-lg top-1/2 -translate-y-1/2 text-secondary"></i>
+        <input type="text" placeholder="Search orders"
+          class="w-full h-icon-box pl-10 pr-lg py-sm text-sm border border-lines_color rounded-md focus:outline-none focus:ring-2 focus:main focus:border-transparent" />
+      </div>
+    </div>
+  </div>
+  <div class="overflow-x-auto">
+    <p-table #dt [value]="data" [responsiveLayout]="'scroll'" styleClass="custom_table" class="p-datatable-sm">
+      <ng-template pTemplate="header">
+        <tr class="text-strong_color">
+          <th> <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+          </th>
+
+          <th *ngFor="let col of columns" pSortableColumn="{{ col.field }}">
+            <ng-container *ngIf="col.field !== 'actions'; else noSort">
+              <span pSortableColumn="{{ col.field }}">
+                {{ col.header }}
+                <p-sortIcon [field]="col.field"></p-sortIcon>
+              </span>
+            </ng-container>
+            <ng-template #noSort>
+              {{ col.header }}
+            </ng-template>
+          </th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-row>
+        <tr>
+          <td>
+            <p-tableCheckbox [value]="row"></p-tableCheckbox>
+          </td>
+          <td *ngFor="let col of columns">
+            @switch (col.field) {
+            @case('code') {
+            <div class="flex flex-row items-center gap-1 hover:text-main cursor-pointer"
+              (click)="copyToClipboard(row[col.field])">
+              <i class="pi" [ngClass]="copiedCodeId === row[col.field] ? 'pi-check' : 'pi-copy'"></i>
+              <span class="text-strong_color text-sm">{{ row[col.field] }}</span>
+            </div>
+            }
+            @case('AWB') {
+            <div class="flex flex-row items-center gap-1 hover:text-main cursor-pointer"
+              (click)="copyToClipboard(row[col.field])">
+              <i class="pi" [ngClass]="copiedCodeId === row[col.field] ? 'pi-check' : 'pi-copy'"></i>
+              <span class="text-strong_color text-sm">AWB: {{ row[col.field] }}</span>
+            </div>
+            }
+            @case('fromDay') {
+            <div class="flex flex-col leading-tight">
+              <span class="text-strong_color text-md">{{ row[col.field] | date: 'yyyy-MM-dd' }}</span>
+              <span class="text-secondary text-sm">{{ row[col.field] | date: 'hh:mm a' }}</span>
+            </div>
+            }
+
+            @case('toDay') {
+            <div class="flex flex-col leading-tight">
+              <span class="text-strong_color text-md">{{ row[col.field]| date: 'yyyy-MM-dd' }}</span>
+              <span class="text-secondary text-sm">{{ row[col.field]| date: 'hh:mm a' }}</span>
+            </div>
+            }
+            @case('pickupTime') {
+            <div class="flex flex-col leading-tight">
+              <span class="text-strong_color text-md">{{ row[col.field]| date: 'yyyy-MM-dd' }}</span>
+              <span class="text-secondary text-sm">{{ row[col.field]| date: 'hh:mm a' }}</span>
+            </div>
+            }
+            @case('type') {
+            <div [appTypeBadge]="row.type"></div>
+            }
+            @case('COD') {
+            <p class="text-strong_color text-sm">
+              {{ row[col.field] }} EGP
+            </p>
+            }
+            @case('shippingFees') {
+            <p class="text-strong_color text-sm">
+              {{ row[col.field] }} EGP
+            </p>
+            }
+
+            @case('actions') {
+            <div class="flex flex-row items-center gap-lg">
+              <button
+                class="flex items-center justify-center gap-sm bg-light-base border border-lines_color text-sm px-xl py-md text-main font-medium rounded-md hover:bg-light-muted  cursor-pointer">
+                <i class="pi pi-download"></i>
+                <span>PDF</span>
+              </button>
+              <button (click)="dt.exportCSV({ selectionOnly: true })"
+                class="flex items-center justify-center gap-sm bg-light-base border border-lines_color text-sm px-xl py-md text-main font-medium rounded-md hover:bg-light-muted  cursor-pointer">
+                <i class="pi pi-download"></i>
+                <span>Excel</span>
+              </button>
+            </div>
+            }
+            @default {
+            <p class="text-strong_color text-sm">{{ row[col.field] }}</p>
+            }
+            }
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+</main>

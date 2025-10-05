@@ -1,0 +1,11 @@
+:host {
+  --p-datatable-header-cell-background: #f4f4f4;
+  --p-datatable-header-cell-padding: 15.5px 16px;
+  --p-datatable-body-cell-padding: 15.5px 16px;
+  --p-datatable-body-cell-padding: 1.063rem 16px;
+}
+::ng-deep .custom_table .p-datatable-table {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e6e6e6;
+}

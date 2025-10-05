@@ -1,0 +1,77 @@
+<div [class.w-sidebar]="isOpen" [class.w-16]="!isOpen" class=" h-full flex flex-col transition-[width] duration-300"
+  [class.pr-sm]="isOpen">
+
+  <!-- Top (Logo + Toggle Button) -->
+  <div class="flex items-center justify-between h-16" [class.justify-center]="!isOpen">
+    <div *ngIf="isOpen" class="flex items-center">
+      <img src="tredo_logo.svg" width="138" alt="Logo">
+    </div>
+    <button (click)="toggle.emit()"
+      class="p-sm rounded-lg flex items-center justify-center border border-lines_color cursor-pointer">
+      <i class="pi text-secondary" [ngClass]="isOpen ? 'pi-chevron-left' : 'pi-chevron-right'"
+        style="font-size: 14px;"></i>
+    </button>
+  </div>
+
+  <!-- Menu -->
+  <nav class="flex-1 mt-4 space-y-1">
+    <a routerLink="/"
+      class="flex items-center text-main text-md gap-xl py-xl px-2xl rounded-md cursor-pointer duration-300 hover:bg-main hover:text-light-base"
+      [class.ml-2_8xl]="isOpen">
+      <i class="pi pi-home"></i>
+      <span *ngIf="isOpen">Dashboard</span>
+    </a>
+
+    <a routerLink="/warehouse"
+      class="flex items-center text-main text-md gap-xl py-xl px-2xl rounded-md cursor-pointer duration-300 hover:bg-main hover:text-light-base"
+      [class.ml-2_8xl]="isOpen">
+      <i class="pi pi-box"></i>
+      <span *ngIf="isOpen">Warehouse</span>
+    </a>
+
+    <a routerLink="/customers"
+      class="flex items-center text-main text-md gap-xl py-xl px-2xl rounded-md cursor-pointer duration-300 hover:bg-main hover:text-light-base"
+      [class.ml-2_8xl]="isOpen">
+      <i class="pi pi-users"></i>
+      <span *ngIf="isOpen">Customers</span>
+    </a>
+
+    <a routerLink="/couriers"
+      class="flex items-center text-main text-md gap-xl py-xl px-2xl rounded-md cursor-pointer duration-300 hover:bg-main hover:text-light-base"
+      [class.ml-2_8xl]="isOpen">
+      <i class="pi pi-truck"></i>
+      <span *ngIf="isOpen">Couriers</span>
+    </a>
+
+    <a routerLink="/financial"
+      class="flex items-center text-md gap-xl py-xl px-2xl rounded-md cursor-pointer duration-300 bg-main text-light-base active"
+      [class.ml-2_8xl]="isOpen">
+      <i class="pi pi-wallet"></i>
+      <span *ngIf="isOpen">Financial</span>
+    </a>
+
+    <a routerLink="/crm"
+      class="flex items-center text-main text-md gap-xl py-xl px-2xl rounded-md cursor-pointer duration-300 hover:bg-main hover:text-light-base"
+      [class.ml-2_8xl]="isOpen">
+      <i class="pi pi-comments"></i>
+      <span *ngIf="isOpen">CRM Customer Service</span>
+    </a>
+  </nav>
+
+  <!-- Bottom Links -->
+  <nav class="mb-4 space-y-1">
+    <a routerLink="/settings"
+      class="flex items-center text-main text-md gap-xl py-xl px-2xl rounded-md cursor-pointer duration-300 hover:bg-main hover:text-light-base"
+      [class.ml-2_8xl]="isOpen">
+      <i class="pi pi-cog"></i>
+      <span *ngIf="isOpen">Settings</span>
+    </a>
+
+    <a routerLink="/support"
+      class="flex items-center text-main text-md gap-xl py-xl px-2xl rounded-md cursor-pointer duration-300 hover:bg-main hover:text-light-base"
+      [class.ml-2_8xl]="isOpen">
+      <i class="pi pi-question-circle"></i>
+      <span *ngIf="isOpen">Support</span>
+    </a>
+  </nav>
+</div>

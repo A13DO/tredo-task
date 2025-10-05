@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+@import "primeicons/primeicons.css";
+
+body {
+  background-color: #f7f7f7;
+}
+/* tailwind-components.css */
+/* @layer components {
+  .btn-main {
+    @apply bg-main text-sm btnPx btnPy rounded-md font-medium text-light hover:bg-secondaryHover transition-colors;
+  }
+  .badge-main {
+    @apply flex items-center justify-center gap-2 h-10 py-2 px-4
+           bg-main text-light text-sm font-medium rounded-md;
+  }
+} */

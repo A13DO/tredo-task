@@ -1,0 +1,12 @@
+<p-breadcrumb styleClass="custom_breadcrumb" [model]="items" class="p-0">
+
+  <ng-template #item let-item>
+    <a class="flex items-center gap-sm cursor-pointer text-md text-secondary hover:text-main"
+      [class.text-strong_color]="item.current">
+      <i [class]="item.icon"></i>
+      <p> {{ item.label }}</p>
+    </a>
+  </ng-template>
+  <ng-template #separator> <i class="pi pi-chevron-right text-secondary" style="font-size: 12px;"></i> </ng-template>
+
+</p-breadcrumb>
