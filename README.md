@@ -35,6 +35,7 @@
 
 1. **Dynamic Columns**  
    - Provide `columns` for headers and `items` for row data, where each item's keys match the corresponding column `field`.
+   
      ```ts
      columns = [
        { field: 'code', header: 'Code' },
