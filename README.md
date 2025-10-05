@@ -16,19 +16,7 @@
 4. [TypeBadgeDirective](#typebadgedirective)
 5. [StatisticsCardComponent](#typebadgedirective)
 5. [CustomPrimeNgBreadcrumb](#typebadgedirective)
----
 
-## Project Guidelines / Checklist
-
-- [x] **Use TailwindCSS Config**: All colors and spacing values are defined in `tailwind.config.js`. No arbitrary values should be used directly inside components. ✅ true
-- [x] **Customize PrimeNG Components**: Ability to apply custom styling to PrimeNG components as per the design. ✅ true
-- [x] **Follow Fonts**: Adhere to font types, sizes, and weights as specified in the design. ✅ true
-- [x] **Use PrimeNG for Basic Inputs**:
-  - Date → `p-calendar`
-  - Time → `p-calendar` (time mode)
-  - Select/Dropdown → `p-dropdown` ✅ true
-- [x] **Local UI Customization**: All PrimeNG component customizations are scoped locally; global overrides are prohibited. ✅ true
-- [x] **Icons**: Use PrimeNG icons wherever possible. ✅ true
 
 ---
 
@@ -89,5 +77,28 @@ Displays a small colored badge with a label based on the input `type`.
 ### Usage
 ```html
 <div [appTypeBadge]="order.type"></div>
+ ```
+
+---
+
+## Project Guidelines / Checklist
+
+- [x] **TailwindCSS Config**: All colors and spacing come from `tailwind.config.js`. No arbitrary values. 
+- [x] **PrimeNG Local Customization**: Style components locally according to design; no global overrides.
+     ```html
+        // using this method (example)
+        :host {
+          --p-breadcrumb-padding: 0;
+        }
+     ```
+- [x] **Basic Inputs (PrimeNG)**:  
+  - Date/Time → `p-datepicker`  
+  - Select/Dropdown → `p-dropdown` 
+- [x] **Fonts**: Follow design-specified types, sizes, and weights.
+
+
+
+
+
 
 
