@@ -29,11 +29,12 @@
 - [x] **Icons**: Use PrimeNG icons wherever possible. ✅ true
 
 ---
+# Customized (SharedTable, TypeBadgeDirective, StatisticsCardComponent, CustomPrimeNgBreadcrumb)
 
 ## SharedTableComponent
 
 ### Description
-`SharedTableComponent` is a reusable table component. Supports **sorting & more**.
+`SharedTableComponent` is a reusable table component. Supports **sorting, row select & more**.
 
 ### Inputs
 | Name | Type | Default | Description |
