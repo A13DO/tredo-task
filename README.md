@@ -80,9 +80,44 @@ Displays a small colored badge with a label based on the input `type`.
 ```html
 <div [appTypeBadge]="order.type"></div>
  ```
- 
 ## StatisticsCardComponent
-## CustomPrimeNgBreadcrumb
+
+
+
+### Description
+A reusable card component, shows a summary with:  
+- Title  
+- Amount/value  
+- Optional percentage change with trend (up/down)  
+- Description  
+- Icon with background color  
+
+Ideal for dashboards or summary sections.
+
+### Inputs
+| Name | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `string` | `!` | Card title |
+| `amount` | `string` | `!` | Main value displayed |
+| `percentage` | `string` | optional | Percentage change value |
+| `trend` | `'up' | 'down' | null` | `null` | Trend indicator: up or down |
+| `description` | `string` | optional | Small descriptive text |
+| `icon` | `string` | `!` | Icon filename in `assets/cards/` |
+| `color` | `string` | `'#3F51B5'` | Background color of the icon container |
+
+### Usage
+```html
+<app-statistics-card
+  title="Total COD"
+  amount="EGP 25,430"
+  percentage="+12.5%"
+  description="Cash collected"
+  icon="docs_icon"
+  color="#E9EAFF"
+  trend="up">
+</app-statistics-card>
+```
+
 
 ## CustomPrimeNgBreadcrumb
 A reusable breadcrumb component built with **PrimeNG** for displaying navigation paths.
