@@ -73,7 +73,7 @@
    - `@switch(col.field)` is used to **render specific columns differently**:
      - `code` and `AWB`: clickable to **copy to clipboard**. Icon changes to a check mark when copied.
      - `fromDay`, `toDay`, `pickupTime`: formatted as **date and time**.
-     - `type`: rendered with [TypeBadgeDirective](###typebagedirective) for colored badges.
+     - `type`: rendered with [TypeBadgeDirective](#typebadgedirective) for colored badges.
      - `COD` and `shippingFees`: show values with currency.
      - `actions`: render buttons for **PDF and Excel export**.
 
@@ -83,9 +83,10 @@
    - Allows selecting multiple rows.
 
 
-### TypeBadgeDirective
 
-### Description
+
+
+## TypeBadgeDirective
 Displays a small colored badge with a label based on the input `type`.  
 Supports `delivery`, `return`, `pickup`, or any other value. Styles are applied locally using `Renderer2`.
 
