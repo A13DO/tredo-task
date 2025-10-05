@@ -41,8 +41,6 @@
 - Selectable rows with checkboxes (`p-tableHeaderCheckbox` & `p-tableCheckbox`).
 - Copy-to-clipboard functionality for `code` and `AWB` columns.
 - Custom badges for `type` field via `TypeBadgeDirective`.
-- Display formatted **dates and times**.
-- Supports **PDF and Excel export** (full table or selection only).
 - Search input with styled Tailwind design.
 - **Filters popover** with:
   - Date and Time pickers (`p-datepicker`) for range filtering.
@@ -66,14 +64,23 @@
 |------|------|-------------|
 | `filterPopover` | `Popover` | Reference to the popover used for filtering. |
 
+### TypeBadgeDirective
+
+**Description**  
+`TypeBadgeDirective` displays a colored badge with a label based on the input `type` (e.g., `delivery`, `return`, `pickup`, or others). It uses `Renderer2` to style the badge locally with a small circle and text.
+
 ---
 
-### Methods
-| Method | Parameters | Description |
-|--------|-----------|-------------|
-| `copyToClipboard(text: string)` | `text: string` | Copies the given text to the clipboard and temporarily changes the icon to a check mark. |
-| `toggle(event: Event)` | `event: Event` | Toggles the visibility of the filters popover. |
+### Input
+| Name | Type | Description |
+|------|------|-------------|
+| `appTypeBadge` | `string` | The type of badge to display (`delivery`, `return`, `pickup`, or any other value). |
 
+---
+
+### Usage
+```html
+<div [appTypeBadge]="order.type"></div>
 ---
 
 ### Usage Example
