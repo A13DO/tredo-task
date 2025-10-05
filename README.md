@@ -80,7 +80,9 @@ Displays a small colored badge with a label based on the input `type`.
 ```html
 <div [appTypeBadge]="order.type"></div>
  ```
-
+ 
+## StatisticsCardComponent
+## CustomPrimeNgBreadcrumb
 ---
 
 ## Project Guidelines / Checklist
