@@ -33,7 +33,7 @@
 ## SharedTableComponent
 
 ### Description
-`SharedTableComponent` is a reusable Angular component built with **PrimeNG** and **TailwindCSS** for displaying data in a table format. Supports **sorting, filtering, exporting, and copy-to-clipboard** features while following design standards.
+`SharedTableComponent` is a reusable table component. Supports **sorting & more**.
 
 ### Inputs
 | Name | Type | Default | Description |
