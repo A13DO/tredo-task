@@ -1,0 +1,58 @@
+/* Make this step larger */
+::ng-deep .shepherd-element {
+  max-width: 900px !important; /* default is ~400px */
+  width: 90vw !important;
+  height: auto !important;
+  border-radius: 16px !important;
+}
+
+.shepherd-content {
+  padding: 2rem !important;
+}
+::ng-deep .shepherd-arrow:before {
+  background: url("../../public/assets/guidelines_arrow.svg") no-repeat center
+    center;
+  border-radius: 3px;
+  transform: none !important;
+  height: 16px;
+  position: absolute !important;
+  width: fit-content !important;
+  top: -60px !important;
+  left: -100px !important;
+  z-index: -1;
+  min-width: 150px;
+}
+::ng-deep .shepherd-target {
+  padding: 5px 6px 5px 0;
+}
+
+::ng-deep .shepherd-target a {
+  background-color: #092d47;
+  color: white;
+  transition: none;
+}
+::ng-deep .shepherd-target a img {
+  filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(0%)
+    hue-rotate(203deg) brightness(111%) contrast(101%);
+}
+::ng-deep .shepherd-target a::before {
+  content: "";
+  position: relative;
+  left: -52px;
+  top: 0;
+  background-color: #092d47;
+  width: 6px;
+  height: 100%;
+  opacity: 1;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+::ng-deep .shepherd-footer .shepherd-button:first-child {
+  border: 1px solid #092d47;
+  color: #092d47;
+  background-color: white;
+}
+::ng-deep .shepherd-footer .shepherd-button:last-child {
+  background-color: #092d47;
+  color: white;
+}

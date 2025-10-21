@@ -2,6 +2,7 @@
 @import "tailwindcss";
 @config "../tailwind.config.ts";
 @import "primeicons/primeicons.css";
+@import 'shepherd.js/dist/css/shepherd.css';
 
 body {
   background-color: #f7f7f7;
