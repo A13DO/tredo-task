@@ -1,0 +1,25 @@
+.animated-bracket {
+  overflow: visible;
+  display: block;
+}
+
+.snake {
+  animation: snake-move 2s linear infinite;
+}
+
+.snake-top {
+  animation-delay: 0s;
+}
+
+.snake-bottom {
+  animation-delay: 0s;
+}
+
+@keyframes snake-move {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
