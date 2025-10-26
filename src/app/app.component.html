@@ -1,48 +1,168 @@
-<div class="flex items-center justify-center m-auto">
-
-  <svg class="animated-bracket" width="40" height="200" viewBox="0 0 40 200"> <!-- Base grey bracket -->
-    <path d="M30,0 C10,20 10,80 30,100 C10,120 10,180 30,200" fill="none" stroke="#ddd" stroke-width="4"
-      stroke-linecap="round" /> <!-- Top half snake -->
-    <path class="snake snake-top" d="M30,100 C10,80 10,20 30,0" fill="none" stroke="url(#gradTop)" stroke-width="4"
-      stroke-linecap="round" stroke-dasharray="20 100" /> <!-- Bottom half snake -->
-    <path class="snake snake-bottom" d="M30,100 C10,120 10,180 30,200" fill="none" stroke="url(#gradBottom)"
-      stroke-width="4" stroke-linecap="round" stroke-dasharray="20 100" />
-    <defs> <!-- Top gradient -->
+<div class="container">
+  <h1>Animated Bracket - Inside to Outside</h1>
+  <svg width="144" height="408" viewBox="0 0 144 408" fill="none" xmlns="http://www.w3.org/2000/svg"
+    class="animated-bracket">
+    <defs>
+      <!-- Gradients -->
       <linearGradient id="gradTop" x1="0" y1="1" x2="0" y2="0">
-        <stop offset="0%" stop-color="#4dd0e1" />
-        <stop offset="100%" stop-color="#00796b" />
-      </linearGradient> <!-- Bottom gradient -->
-      <linearGradient id="gradBottom" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#4dd0e1" />
-        <stop offset="100%" stop-color="#00796b" />
+        <stop offset="0%" stop-color="#00BCD4" />
+        <stop offset="100%" stop-color="#00796B" />
       </linearGradient>
+
+      <linearGradient id="gradBottom" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#00BCD4" />
+        <stop offset="100%" stop-color="#00796B" />
+      </linearGradient>
+
+      <!-- Clip paths -->
+      <clipPath id="clipTop">
+        <rect width="144" height="208" fill="white" transform="matrix(-1 0 0 1 144 0)" />
+      </clipPath>
+
+      <clipPath id="clipBottom">
+        <rect width="144" height="208" fill="white" transform="matrix(-1 0 0 -1 144 408)" />
+      </clipPath>
     </defs>
-  </svg>
 
+    <style>
+      .animated-bracket {
+        overflow: visible;
+        display: block;
+      }
 
-  <svg class="animated-bracket" width="144" height="408" viewBox="0 0 144 408" fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0_1902_68893)">
+      /* Base static bracket */
+      .base {
+        stroke: #e0e0e0;
+        stroke-width: 8;
+        fill: none;
+      }
+
+      /* Animated gradient stroke - inside to outside direction */
+      .snake {
+        stroke-width: 8;
+        fill: none;
+        stroke-linecap: round;
+        stroke-dasharray: 120 400;
+        animation: snake-move-inside-out 3s linear infinite;
+      }
+
+      .snake-top {
+        stroke: url(#gradTop);
+      }
+
+      .snake-bottom {
+        stroke: url(#gradBottom);
+      }
+
+      /* Animation from inside to outside */
+      @keyframes snake-move-inside-out {
+        0% {
+          stroke-dashoffset: -520;
+        }
+
+        100% {
+          stroke-dashoffset: 520;
+        }
+      }
+    </style>
+
+    <!-- Static grey base -->
+    <g clip-path="url(#clipTop)">
+      <path class="base"
+        d="M144 4H104.187C82.0959 4 64.1872 21.9086 64.1872 44V164C64.1872 186.091 46.2786 204 24.1872 204H0" />
+    </g>
+
+    <g clip-path="url(#clipBottom)">
+      <path class="base"
+        d="M144 404H104.187C82.0959 404 64.1872 386.091 64.1872 364V244C64.1872 221.909 46.2786 204 24.1872 204H0" />
+    </g>
+
+    <!-- Animated snakes with inside to outside direction -->
+    <g clip-path="url(#clipTop)">
       <path class="snake snake-top"
-        d="M144 3.99999H104.187C82.0959 3.99999 64.1872 21.9086 64.1872 44V164C64.1872 186.091 46.2786 204 24.1872 204H-2.44379e-06"
-        stroke="#E0E0E0" stroke-width="8" />
+        d="M144 4H104.187C82.0959 4 64.1872 21.9086 64.1872 44V164C64.1872 186.091 46.2786 204 24.1872 204H0" />
     </g>
-    <g clip-path="url(#clip1_1902_68893)">
+
+    <g clip-path="url(#clipBottom)">
       <path class="snake snake-bottom"
-        d="M144 404H104.187C82.0959 404 64.1872 386.091 64.1872 364V244C64.1872 221.909 46.2786 204 24.1872 204H-2.44379e-06"
+        d="M144 404H104.187C82.0959 404 64.1872 386.091 64.1872 364V244C64.1872 221.909 46.2786 204 24.1872 204H0" />
+    </g>
+  </svg>
+  <svg width="144" height="408" viewBox="0 0 144 408" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Gradients -->
+      <linearGradient id="gradTop" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0%" stop-color="#00BCD4" />
+        <stop offset="100%" stop-color="#00796B" />
+      </linearGradient>
+
+      <linearGradient id="gradBottom" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#00BCD4" />
+        <stop offset="100%" stop-color="#00796B" />
+      </linearGradient>
+
+      <clipPath id="clip0_1902_68890">
+        <rect width="144" height="208" fill="white" />
+      </clipPath>
+      <clipPath id="clip1_1902_68890">
+        <rect width="144" height="208" fill="white" transform="matrix(1 0 0 -1 0 408)" />
+      </clipPath>
+    </defs>
+
+    <style>
+      .base {
+        stroke: #E0E0E0;
+        stroke-width: 8;
+        fill: none;
+      }
+
+      .snake {
+        stroke-width: 8;
+        fill: none;
+        stroke-linecap: round;
+        stroke-dasharray: 120 400;
+        animation: snake-move-inside-out 2s linear infinite;
+      }
+
+      .snake-top {
+        stroke: url(#gradTop);
+      }
+
+      .snake-bottom {
+        stroke: url(#gradBottom);
+      }
+
+      @keyframes snake-move-inside-out {
+        0% {
+          stroke-dashoffset: -520;
+        }
+
+        100% {
+          stroke-dashoffset: 520;
+        }
+      }
+    </style>
+
+    <!-- Static grey base -->
+    <g clip-path="url(#clip0_1902_68890)">
+      <path
+        d="M0 3.99999H39.8128C61.9041 3.99999 79.8128 21.9086 79.8128 44V164C79.8128 186.091 97.7214 204 119.813 204H144"
         stroke="#E0E0E0" stroke-width="8" />
     </g>
-    <defs> <!-- Top gradient -->
-      <linearGradient id="gradTop" x1="0" y1="1" x2="0" y2="0">
-        <stop offset="0%" stop-color="#4dd0e1" />
-        <stop offset="100%" stop-color="#00796b" />
-      </linearGradient> <!-- Bottom gradient -->
-      <linearGradient id="gradBottom" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#4dd0e1" />
-        <stop offset="100%" stop-color="#00796b" />
-      </linearGradient>
-    </defs>
+    <g clip-path="url(#clip1_1902_68890)">
+      <path d="M0 404H39.8128C61.9041 404 79.8128 386.091 79.8128 364V244C79.8128 221.909 97.7214 204 119.813 204H144"
+        stroke="#E0E0E0" stroke-width="8" />
+    </g>
+
+    <!-- Animated snakes -->
+    <g clip-path="url(#clip0_1902_68890)">
+      <path class="snake snake-top"
+        d="M0 3.99999H39.8128C61.9041 3.99999 79.8128 21.9086 79.8128 44V164C79.8128 186.091 97.7214 204 119.813 204H144" />
+    </g>
+    <g clip-path="url(#clip1_1902_68890)">
+      <path class="snake snake-bottom"
+        d="M0 404H39.8128C61.9041 404 79.8128 386.091 79.8128 364V244C79.8128 221.909 97.7214 204 119.813 204H144" />
+    </g>
   </svg>
 </div>
-
 <!-- https://chatgpt.com/c/68fdfa0d-37b0-8327-8d40-600ee2e1ac3a -->
